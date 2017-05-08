@@ -1,0 +1,7 @@
+<!-- Listing of Articles for Sidebar -->
+
+<h5 class="article-subject-list"> <%= article.subject %> </h5>
+<h4 class="article-title-list"> <%= link_to article.title, article %> </h4>
+<h5 class="article-created-at"> <%= article.created_at.to_formatted_s(:long) %> </h5>
+
+<hr>

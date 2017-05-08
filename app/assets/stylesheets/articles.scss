@@ -1,3 +1,43 @@
 // Place all the styles related to the articles controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+body {
+  padding-top: 5%;
+  padding-bottom: 5%;
+}
+h1 {
+  text-align: center;
+}
+
+.articles-index-page h1 {
+  text-align: left;
+}
+.date-posted {
+  font-style: italic;
+}
+.articles {
+  padding-left: 5%;
+}
+.sidebar-articles-listing {
+  padding-left: 2%;
+}
+
+
+
+// Form Partial
+// .actions {
+//   text-align: right;
+// }
+.form-fields {
+  padding-right: 0;
+}
+
+// Edit Post Page
+.show-back-links {
+  text-align: right;
+}
+.cancel-edit-btn,
+.back-to-all-btn {
+  color: black;
+}

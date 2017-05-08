@@ -1,5 +1,11 @@
-<h1>New Article</h1>
+<div class="new-post-page container-fluid">
 
-<%= render 'form', article: @article %>
+  <h1>New Article</h1>
 
-<%= link_to 'Back', articles_path %>
+  <%= render 'form', article: @article %>
+
+  <div class="show-back-links col-sm-9 col-sm-offset-1">
+    <p><%= link_to 'Cancel New Article', articles_path, :class => "btn btn-danger cancel-edit-btn" %></p>
+  </div>
+
+</div>

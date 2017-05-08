@@ -6,4 +6,7 @@ Rails.application.routes.draw do
 
   root 'articles#index'
 
+  get "info_pages/about"
+  get "info_pages/contact"
+
 end
