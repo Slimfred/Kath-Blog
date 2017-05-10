@@ -34,6 +34,8 @@ class Ability
         can :manage, :all
       else
         can :manage, User, id: user.id
+        can [:create, :read], Comment
+        can :read, Article
       end
   end
 end
