@@ -5,7 +5,13 @@ class ArticlesController < ApplicationController
   # GET /articles
   # GET /articles.json
   def index
-    @articles = Article.all
+    if params[:q]
+      search_term = params[:q]
+      @articles = Article.search(search_term)
+    else
+      @articles = Article.all
+    end
+
   end
 
   # GET /articles/1
