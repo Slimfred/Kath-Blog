@@ -6,7 +6,7 @@ class Article < ApplicationRecord
   validates :subject, presence: true
   validates :body, presence: true
 
-  scope :created_at_desc, -> {order(created_at: :desc)}
+  scope :updated_at_desc, -> {order(updated_at: :desc)}
 
   def self.search(search_term)
     Article.where("body LIKE ?", "%#{search_term}%")
