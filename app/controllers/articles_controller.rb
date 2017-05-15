@@ -9,7 +9,7 @@ class ArticlesController < ApplicationController
       search_term = params[:q]
       @articles = Article.search(search_term)
     else
-      @articles = Article.all
+      @articles = Article.order("updated_at DESC")
     end
 
   end
