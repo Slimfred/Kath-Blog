@@ -38,7 +38,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'devise'
 gem 'cancancan', '~> 1.10'
 
-gem 'ckeditor'
+gem 'ckeditor', github: 'galetahub/ckeditor'
 
 
 group :development, :test do

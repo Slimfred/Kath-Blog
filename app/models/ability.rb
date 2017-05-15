@@ -32,6 +32,7 @@ class Ability
     user ||= User.new # guest user (not logged in)
       if user.admin?
         can :manage, :all
+        can :access, :ckeditor    # needed to access Ckeditor filebrowser
       else
         can :manage, User, id: user.id
         can [:create, :read], Comment
