@@ -1,22 +1,29 @@
-<p id="notice"><%= notice %></p>
-
-<div class="articles-index-page container-fluid">
+<div class="articles-index-page container-fluid col-sm-11">
 
   <div class="articles-main-page col-sm-12">
     <div class="articles-blog-blurb col-sm-9">
       <h1> Kath's Blog </h1>
-      <h3> This will be a blurb about the blog.  This is my blog I hope you like it.  I'm writing it because I want to share stuff.  I think this blurb should be short and sweet. </h3>
         <% if signed_in? && current_user.admin? %>
           <%= link_to 'New Post', new_article_path, :class => "btn btn-success btn-lg" %>
         <% end %>
 
-      <div class="articles col-sm-11">
+      <div class="articles col-sm-12">
         <%= render @articles %>
       </div> <!-- end articles -->
     </div> <!-- end articles-blog-blurb -->
 
     <div class="sidebar-articles-listing col-sm-3">
+      <h4> This will be a blurb about the blog.  This is my blog I hope you like it.  I'm writing it because I want to share stuff.  I think this blurb should be short and sweet. </h4>
+
       <h3> Article listing </h3>
+
+      <div class="search-box">
+        <%= form_tag("/articles", method: "get") do %>
+          <%= label_tag(:q, "Search for:", class: "search-label") %>
+          <%= text_field_tag(:q, params[:q]) %>
+          <%= submit_tag("Go", class: "btn btn-default search-button") %>
+        <% end %>
+      </div> <!-- end search-box -->
 
       <% @articles.each do |article| %>
           <%= render partial: "article_list", locals: {article: article} %>

@@ -36,15 +36,14 @@
             <li> <%= link_to "About", info_pages_about_path %> </li>
             <!-- <li> Link_to "Articles", need path here </li> -->
             <li> <%= link_to "Contact", info_pages_contact_path %> </li>
-          </ul>
-
-          <div class="search-box">
-            <%= form_tag("/articles", method: "get") do %>
-              <%= label_tag(:q, "Search for:", class: "search-label") %>
-              <%= text_field_tag(:q, params[:q]) %>
-              <%= submit_tag("Go", class: "btn btn-default search-button") %>
+            <li>
+            <% if user_signed_in? %>
+              <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>
+            <% else %>
+              <%= link_to('Login', new_user_session_path) %>
             <% end %>
-          </div> <!-- end search-box -->
+            </li>
+          </ul>
 
         </div> <!-- end collapse navbar-collapse" -->
       </div> <!-- end container-fluid -->
@@ -63,7 +62,7 @@
     <footer class="navbar-fixed-bottom">
       <div class="container-fluid sticky-footer">
         <p class="p-footer col-sm-2"> &copy 2017 Kath Daily </p>
-        <ul class="nav col-sm-3">
+        <!-- <ul class="nav col-sm-3">
           <li>
           <% if user_signed_in? %>
             <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>
@@ -71,7 +70,7 @@
             <%= link_to('Admin Login', new_user_session_path) %>
           <% end %>
           </li>
-        </ul>
+        </ul> -->
       </div>
     </footer>
 

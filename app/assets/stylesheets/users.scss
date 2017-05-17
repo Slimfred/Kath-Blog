@@ -3,9 +3,10 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
-.devise-sign-in,
-.devise-new-user {
-  margin-left: 5%;
+.devise-sign-in h2,
+.devise-new-user h2,
+.devise-edit-user h2 {
+  text-align: center;
 }
 
 .dh2 {
