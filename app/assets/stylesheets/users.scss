@@ -2,7 +2,9 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-
+.user-form {
+  background-color: #fff;
+}
 .devise-sign-in h2,
 .devise-new-user h2,
 .devise-edit-user h2 {
@@ -11,4 +13,8 @@
 
 .dh2 {
   margin-bottom: 2%;
+}
+
+.shared-links {
+  color: #fff;
 }

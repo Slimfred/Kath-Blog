@@ -8,5 +8,6 @@ Rails.application.routes.draw do
 
   get "info_pages/about"
   get "info_pages/contact"
+  post "info_pages/thank_you"
 
 end

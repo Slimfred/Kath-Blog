@@ -1,1 +1,34 @@
-<h1> This is the contact page </h1>
+<div class="container-fluid contact-page">
+  <div class="col-md-12">
+    <p> Kath's Logo or Header here </p>
+  </div>
+
+  <h1> Questions or comments for Kath?</h1>
+
+  <h2> fill out the form below or email her at kathblog@email.com </h2>
+
+  <div class="contact-form col-sm-6 col-sm-offset-3">
+
+    <%= flash[:notice] %>
+
+    <%= form_tag("/info_pages/thank_you") do %>
+        <div class="form-group">
+          <%= label_tag :name, "Name", class: "contact-labels" %>
+          <%= text_field_tag :name, nil, class: "form-control", placeholder: "Please Enter Your Name", required: "required" %>
+        </div> <!-- end form-group -->
+
+        <div class="form-group">
+          <%= label_tag :email, "Email Address", class: "contact-labels" %>
+          <%= text_field_tag :email, nil, class: "form-control", placeholder: "Please Enter Your Email", required: "required" %>
+        </div> <!-- end form-group -->
+
+        <div class="form-group">
+          <%= label_tag :message, "Message", class: "contact-labels" %>
+          <%= text_area_tag :message, nil, class: "form-control", placeholder: "Please Enter Your Message", required: "required" %>
+        </div> <!-- end form-group -->
+      <%= submit_tag "Send", class: "btn btn-default submit-button" %>
+    <% end %>
+
+  </div> <!-- end contact form -->
+
+</div> <!-- end container-fluid -->
