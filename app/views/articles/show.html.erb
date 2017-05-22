@@ -12,6 +12,9 @@
     <p class="date-posted"> <%= @article.created_at %> </p>
     <p class="article-body"> <%= @article.body.html_safe %> </p>
 
+    <%= render 'new_comment' %>
+
+    <%= render 'comments' %>
 
   </div> <!-- end show-article-page -->
 
