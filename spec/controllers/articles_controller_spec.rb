@@ -11,8 +11,7 @@ describe ArticlesController, :type => :controller do
   describe "GET #index" do
     it "shows all articles" do
       get :index
-      # expect(response).to have_http_status(200)
-      expect(assigns(:articles)).to eq Article.all
+      expect(assigns(:articles)).to match(Article.all)
     end
   end
 
