@@ -23,14 +23,15 @@
       <% end -%>
 
       <div class="actions">
-        <%= f.submit "Log in", class: "btn btn-default submit-button" %>
+        <%= f.submit "Log in", class: "btn btn-success submit-button" %>
       </div>
 
     <% end %>
 
+    <div class="shared-links col-sm-12">
+      <%= render "devise/shared/links" %>
+    </div> <!-- end shared-links -->
+
   </div> <!-- end user-form -->
 
-  <div class="shared-links col-sm-12">
-    <%= render "devise/shared/links" %>
-  </div> <!-- end shared-links -->
-</div>
+</div> <!-- end devise-sign-in -->
