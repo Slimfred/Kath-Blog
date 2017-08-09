@@ -29,6 +29,13 @@ class ArticlesController < ApplicationController
   def edit
   end
 
+  def send_notice
+    @user_mail = User.all
+    @user_mail.each do |u|
+      UserMailer.new_article(@user_mail).deliver_now
+    end
+  end
+
   # POST /articles
   # POST /articles.json
   def create
@@ -38,7 +45,7 @@ class ArticlesController < ApplicationController
       if @article.save
         format.html { redirect_to @article, notice: 'Article was successfully created.' }
         format.json { render :show, status: :created, location: @article }
-        # UserMailer.new_article(user).deliver_now
+        send_notice
       else
         format.html { render :new }
         format.json { render json: @article.errors, status: :unprocessable_entity }

@@ -18,5 +18,5 @@ class UserMailer < ApplicationMailer
       mail( :to => user.email,
             :subject => "New article on #{@appname}!")
     end
-    
+
 end
